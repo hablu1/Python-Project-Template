@@ -1,0 +1,2414 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This is a template for Python projects.">
+      
+      
+      
+        <link rel="canonical" href="https://franneck94.github.io/Python-Project-Template/api/">
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>API - FastVector</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="grey">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://franneck94.github.io/Python-Project-Template" title="FastVector" class="md-header-nav__button md-logo" aria-label="FastVector">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            FastVector
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              API
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/franneck94/Python-Project-Template/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    franneck94/Python-Project-Template
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://franneck94.github.io/Python-Project-Template" title="FastVector" class="md-nav__button md-logo" aria-label="FastVector">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    FastVector
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/franneck94/Python-Project-Template/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    franneck94/Python-Project-Template
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Start
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      API
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computations-functions" class="md-nav__link">
+    Computations Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.computations" class="md-nav__link">
+    fastvector.computations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.computations.cython_clip_vector" class="md-nav__link">
+    cython_clip_vector()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.computations.naive_cython_clip_vector" class="md-nav__link">
+    naive_cython_clip_vector()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.computations.python_clip_vector" class="md-nav__link">
+    python_clip_vector()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dtypes" class="md-nav__link">
+    Dtypes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.dtypes" class="md-nav__link">
+    fastvector.dtypes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-class" class="md-nav__link">
+    Vector Class
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.vector" class="md-nav__link">
+    fastvector.vector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND" class="md-nav__link">
+    VectorND
+  </a>
+  
+    <nav class="md-nav" aria-label="VectorND">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__abs__" class="md-nav__link">
+    __abs__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__add__" class="md-nav__link">
+    __add__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__bool__" class="md-nav__link">
+    __bool__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__call__" class="md-nav__link">
+    __call__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__eq__" class="md-nav__link">
+    __eq__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__ge__" class="md-nav__link">
+    __ge__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__getitem__" class="md-nav__link">
+    __getitem__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__gt__" class="md-nav__link">
+    __gt__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__le__" class="md-nav__link">
+    __le__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__len__" class="md-nav__link">
+    __len__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__lt__" class="md-nav__link">
+    __lt__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__mul__" class="md-nav__link">
+    __mul__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__repr__" class="md-nav__link">
+    __repr__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__setitem__" class="md-nav__link">
+    __setitem__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__str__" class="md-nav__link">
+    __str__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__sub__" class="md-nav__link">
+    __sub__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__truediv__" class="md-nav__link">
+    __truediv__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.check_numeric_argument" class="md-nav__link">
+    check_numeric_argument()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.check_vector_types" class="md-nav__link">
+    check_vector_types()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    Version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.version" class="md-nav__link">
+    fastvector.version
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computations-functions" class="md-nav__link">
+    Computations Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.computations" class="md-nav__link">
+    fastvector.computations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.computations.cython_clip_vector" class="md-nav__link">
+    cython_clip_vector()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.computations.naive_cython_clip_vector" class="md-nav__link">
+    naive_cython_clip_vector()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.computations.python_clip_vector" class="md-nav__link">
+    python_clip_vector()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dtypes" class="md-nav__link">
+    Dtypes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.dtypes" class="md-nav__link">
+    fastvector.dtypes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-class" class="md-nav__link">
+    Vector Class
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.vector" class="md-nav__link">
+    fastvector.vector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND" class="md-nav__link">
+    VectorND
+  </a>
+  
+    <nav class="md-nav" aria-label="VectorND">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__abs__" class="md-nav__link">
+    __abs__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__add__" class="md-nav__link">
+    __add__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__bool__" class="md-nav__link">
+    __bool__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__call__" class="md-nav__link">
+    __call__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__eq__" class="md-nav__link">
+    __eq__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__ge__" class="md-nav__link">
+    __ge__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__getitem__" class="md-nav__link">
+    __getitem__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__gt__" class="md-nav__link">
+    __gt__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__le__" class="md-nav__link">
+    __le__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__len__" class="md-nav__link">
+    __len__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__lt__" class="md-nav__link">
+    __lt__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__mul__" class="md-nav__link">
+    __mul__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__repr__" class="md-nav__link">
+    __repr__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__setitem__" class="md-nav__link">
+    __setitem__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__str__" class="md-nav__link">
+    __str__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__sub__" class="md-nav__link">
+    __sub__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.__truediv__" class="md-nav__link">
+    __truediv__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.check_numeric_argument" class="md-nav__link">
+    check_numeric_argument()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastvector.vector.VectorND.check_vector_types" class="md-nav__link">
+    check_vector_types()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    Version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastvector.version" class="md-nav__link">
+    fastvector.version
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/franneck94/Python-Project-Template/edit/master/docs/api.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="reference">Reference</h1>
+<h2 id="computations-functions">Computations Functions</h2>
+<div class="doc doc-object doc-module">
+<h2 class="hidden-toc" href="#fastvector.computations" id="fastvector.computations" style="visibility: hidden; position: absolute;">
+        </h2>
+<div class="doc doc-contents first">
+<p>Vector computations.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="fastvector.computations.cython_clip_vector">
+
+        <code class="highlight language-python">
+cython_clip_vector<span class="p">(</span><span class="n">vector_in</span><span class="p">,</span> <span class="n">min_value</span><span class="p">,</span> <span class="n">max_value</span><span class="p">,</span> <span class="n">vector_out</span><span class="p">)</span>        </code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Clip the vector values by optimized cython code.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vector_in</code></td>
+<td><code>VectorND</code></td>
+<td>
+<p>Input vector.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>min_value</code></td>
+<td><code>Union[int, float]</code></td>
+<td>
+<p>Real number.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>max_value</code></td>
+<td><code>Union[int, float]</code></td>
+<td>
+<p>Real number.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>vector_out</code></td>
+<td><code>VectorND</code></td>
+<td>
+<p>Output vector.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ValueError</code></td>
+<td>
+<p>If min_value is larger than max_value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\computations.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">cython_clip_vector</span><span class="p">(</span><span class="n">vector_in</span><span class="p">:</span> <span class="n">VectorND</span><span class="p">,</span> <span class="n">min_value</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">max_value</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">vector_out</span><span class="p">:</span> <span class="n">VectorND</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">"""Clip the vector values by optimized cython code.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        vector_in (VectorND): Input vector.</span>
+<span class="sd">        min_value (Number): Real number.</span>
+<span class="sd">        max_value (Number): Real number.</span>
+<span class="sd">        vector_out (VectorND): Output vector.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If min_value is larger than max_value.</span>
+<span class="sd">    """</span>
+    <span class="n">VectorND</span><span class="o">.</span><span class="n">check_vector_types</span><span class="p">(</span><span class="n">vector_in</span><span class="p">)</span>
+    <span class="n">VectorND</span><span class="o">.</span><span class="n">check_vector_types</span><span class="p">(</span><span class="n">vector_out</span><span class="p">)</span>
+    <span class="n">VectorND</span><span class="o">.</span><span class="n">check_numeric_argument</span><span class="p">(</span><span class="n">min_value</span><span class="p">)</span>
+    <span class="n">VectorND</span><span class="o">.</span><span class="n">check_numeric_argument</span><span class="p">(</span><span class="n">max_value</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">min_value</span> <span class="o">&gt;</span> <span class="n">max_value</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"min_value must be &lt;= max_value"</span><span class="p">)</span>
+    <span class="n">_cython_clip_vector</span><span class="p">(</span><span class="n">vector_in</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">min_value</span><span class="p">,</span> <span class="n">max_value</span><span class="p">,</span> <span class="n">vector_out</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="fastvector.computations.naive_cython_clip_vector">
+
+        <code class="highlight language-python">
+naive_cython_clip_vector<span class="p">(</span><span class="n">vector_in</span><span class="p">,</span> <span class="n">min_value</span><span class="p">,</span> <span class="n">max_value</span><span class="p">,</span> <span class="n">vector_out</span><span class="p">)</span>        </code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Clip the vector values by naive cython code.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vector_in</code></td>
+<td><code>VectorND</code></td>
+<td>
+<p>Input vector.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>min_value</code></td>
+<td><code>Union[int, float]</code></td>
+<td>
+<p>Real number.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>max_value</code></td>
+<td><code>Union[int, float]</code></td>
+<td>
+<p>Real number.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>vector_out</code></td>
+<td><code>VectorND</code></td>
+<td>
+<p>Output vector.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ValueError</code></td>
+<td>
+<p>If min_value is larger than max_value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\computations.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">naive_cython_clip_vector</span><span class="p">(</span><span class="n">vector_in</span><span class="p">:</span> <span class="n">VectorND</span><span class="p">,</span> <span class="n">min_value</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">max_value</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">vector_out</span><span class="p">:</span> <span class="n">VectorND</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">"""Clip the vector values by naive cython code.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        vector_in (VectorND): Input vector.</span>
+<span class="sd">        min_value (Number): Real number.</span>
+<span class="sd">        max_value (Number): Real number.</span>
+<span class="sd">        vector_out (VectorND): Output vector.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If min_value is larger than max_value.</span>
+<span class="sd">    """</span>
+    <span class="n">VectorND</span><span class="o">.</span><span class="n">check_vector_types</span><span class="p">(</span><span class="n">vector_in</span><span class="p">)</span>
+    <span class="n">VectorND</span><span class="o">.</span><span class="n">check_vector_types</span><span class="p">(</span><span class="n">vector_out</span><span class="p">)</span>
+    <span class="n">VectorND</span><span class="o">.</span><span class="n">check_numeric_argument</span><span class="p">(</span><span class="n">min_value</span><span class="p">)</span>
+    <span class="n">VectorND</span><span class="o">.</span><span class="n">check_numeric_argument</span><span class="p">(</span><span class="n">max_value</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">min_value</span> <span class="o">&gt;</span> <span class="n">max_value</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"min_value must be &lt;= max_value"</span><span class="p">)</span>
+    <span class="n">_naive_cython_clip_vector</span><span class="p">(</span><span class="n">vector_in</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">min_value</span><span class="p">,</span> <span class="n">max_value</span><span class="p">,</span> <span class="n">vector_out</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="fastvector.computations.python_clip_vector">
+
+        <code class="highlight language-python">
+python_clip_vector<span class="p">(</span><span class="n">vector_in</span><span class="p">,</span> <span class="n">min_value</span><span class="p">,</span> <span class="n">max_value</span><span class="p">,</span> <span class="n">vector_out</span><span class="p">)</span>        </code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>Clip the vector values by plain python code</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vector_in</code></td>
+<td><code>VectorND</code></td>
+<td>
+<p>Input vector.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>min_value</code></td>
+<td><code>Union[int, float]</code></td>
+<td>
+<p>Real number.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>max_value</code></td>
+<td><code>Union[int, float]</code></td>
+<td>
+<p>Real number.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>vector_out</code></td>
+<td><code>VectorND</code></td>
+<td>
+<p>Output vector.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ValueError</code></td>
+<td>
+<p>If min_value is larger than max_value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\computations.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">python_clip_vector</span><span class="p">(</span><span class="n">vector_in</span><span class="p">:</span> <span class="n">VectorND</span><span class="p">,</span> <span class="n">min_value</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">max_value</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">vector_out</span><span class="p">:</span> <span class="n">VectorND</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">"""Clip the vector values by plain python code</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        vector_in (VectorND): Input vector.</span>
+<span class="sd">        min_value (Number): Real number.</span>
+<span class="sd">        max_value (Number): Real number.</span>
+<span class="sd">        vector_out (VectorND): Output vector.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If min_value is larger than max_value.</span>
+<span class="sd">    """</span>
+    <span class="n">VectorND</span><span class="o">.</span><span class="n">check_vector_types</span><span class="p">(</span><span class="n">vector_in</span><span class="p">)</span>
+    <span class="n">VectorND</span><span class="o">.</span><span class="n">check_vector_types</span><span class="p">(</span><span class="n">vector_out</span><span class="p">)</span>
+    <span class="n">VectorND</span><span class="o">.</span><span class="n">check_numeric_argument</span><span class="p">(</span><span class="n">min_value</span><span class="p">)</span>
+    <span class="n">VectorND</span><span class="o">.</span><span class="n">check_numeric_argument</span><span class="p">(</span><span class="n">max_value</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">min_value</span> <span class="o">&gt;</span> <span class="n">max_value</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"min_value must be &lt;= max_value"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vector_in</span><span class="p">)):</span>  <span class="c1"># pylint: disable=consider-using-enumerate</span>
+        <span class="n">vector_out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">vector_in</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">min_value</span><span class="p">),</span> <span class="n">max_value</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="dtypes">Dtypes</h2>
+<div class="doc doc-object doc-module">
+<h2 class="hidden-toc" href="#fastvector.dtypes" id="fastvector.dtypes" style="visibility: hidden; position: absolute;">
+        </h2>
+<div class="doc doc-contents first">
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+<h2 id="vector-class">Vector Class</h2>
+<div class="doc doc-object doc-module">
+<h2 class="hidden-toc" href="#fastvector.vector" id="fastvector.vector" style="visibility: hidden; position: absolute;">
+        </h2>
+<div class="doc doc-contents first">
+<p>Own implementation of a ND vector class.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-class">
+<h2 class="doc doc-heading" id="fastvector.vector.VectorND">
+
+        <code>VectorND</code>
+
+
+      </h2>
+<div class="doc doc-contents ">
+<p>VectorND class to perform simple vector operations.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__abs__">
+
+        <code class="highlight language-python">
+__abs__<span class="p">(</span><span class="bp">self</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the length (magnitude) of the vector instance.</p>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>float</code></td>
+<td>
+<p>float: Length of the vector instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__abs__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="sd">"""Return the length (magnitude) of the vector instance.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Length of the vector instance.</span>
+<span class="sd">    """</span>
+    <span class="n">square_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">val</span><span class="o">**</span><span class="mf">2.0</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">square_sum</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__add__">
+
+        <code class="highlight language-python">
+__add__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_vector</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Returns the additon vector of the self and the other vector instance.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>other_vector</code></td>
+<td><code>VectorND</code></td>
+<td>
+<p>Other vector instance (right-hand-side of the operator).</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>VectorND</code></td>
+<td>
+<p>VectorND: The additon vector of the self and the other vector instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_vector</span><span class="p">:</span> <span class="n">VectorND</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VectorND</span><span class="p">:</span>
+    <span class="sd">"""Returns the additon vector of the self and the other vector instance.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        other_vector (VectorND): Other vector instance (right-hand-side of the operator).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        VectorND: The additon vector of the self and the other vector instance.</span>
+<span class="sd">    """</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">check_vector_types</span><span class="p">(</span><span class="n">other_vector</span><span class="p">)</span>
+    <span class="n">add_result</span> <span class="o">=</span> <span class="p">[</span><span class="n">self_val</span> <span class="o">+</span> <span class="n">other_val</span> <span class="k">for</span> <span class="n">self_val</span><span class="p">,</span> <span class="n">other_val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">other_vector</span><span class="o">.</span><span class="n">values</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">VectorND</span><span class="p">(</span><span class="n">add_result</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__bool__">
+
+        <code class="highlight language-python">
+__bool__<span class="p">(</span><span class="bp">self</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the truth value of the vector instance.</p>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool</code></td>
+<td>
+<p>bool: True, if the vector is not the Null-vector.
+False, else.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__bool__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">"""Return the truth value of the vector instance.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: True, if the vector is not the Null-vector.</span>
+<span class="sd">        False, else.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__call__">
+
+        <code class="highlight language-python">
+__call__<span class="p">(</span><span class="bp">self</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Callable for the vector instance representation.</p>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td>
+<p>str: The representation of the vector instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">"""Callable for the vector instance representation.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The representation of the vector instance.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__eq__">
+
+        <code class="highlight language-python">
+__eq__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_vector</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Check if the vector instances have the same values.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>other_vector</code></td>
+<td><code>Any</code></td>
+<td>
+<p>Other vector instance (right-hand-side of the operator)</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool</code></td>
+<td>
+<p>bool: True, if the both vector instances have the same values.
+False, else.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_vector</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">"""Check if the vector instances have the same values.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        other_vector (Any): Other vector instance (right-hand-side of the operator)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: True, if the both vector instances have the same values.</span>
+<span class="sd">        False, else.</span>
+<span class="sd">    """</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">check_vector_types</span><span class="p">(</span><span class="n">other_vector</span><span class="p">)</span>
+    <span class="n">is_equal</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="n">other_vector</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+        <span class="n">is_equal</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">is_equal</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__ge__">
+
+        <code class="highlight language-python">
+__ge__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return a &gt;= b.  Computed by @total_ordering from (not a &lt; b).</p>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">_ge_from_lt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">):</span>
+    <span class="s1">'Return a &gt;= b.  Computed by @total_ordering from (not a &lt; b).'</span>
+    <span class="n">op_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__lt__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">op_result</span> <span class="ow">is</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">op_result</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="n">op_result</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__getitem__">
+
+        <code class="highlight language-python">
+__getitem__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the vector item at index idx.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>idx</code></td>
+<td><code>int</code></td>
+<td>
+<p>The index idx</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IndexError</code></td>
+<td>
+<p>If idx &gt;= len.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Number</code></td>
+<td>
+<p>Number: If idx &lt; len: returns the value. IndexError, else.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
+    <span class="sd">"""Return the vector item at index idx.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        idx (int): The index idx</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        IndexError: If idx &gt;= len.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Number: If idx &lt; len: returns the value. IndexError, else.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s1">'Invalid index value!'</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__gt__">
+
+        <code class="highlight language-python">
+__gt__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return a &gt; b.  Computed by @total_ordering from (not a &lt; b) and (a != b).</p>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">_gt_from_lt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">):</span>
+    <span class="s1">'Return a &gt; b.  Computed by @total_ordering from (not a &lt; b) and (a != b).'</span>
+    <span class="n">op_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__lt__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">op_result</span> <span class="ow">is</span> <span class="bp">NotImplemented</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">op_result</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="n">op_result</span> <span class="ow">and</span> <span class="bp">self</span> <span class="o">!=</span> <span class="n">other</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__init__">
+
+        <code class="highlight language-python">
+__init__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'d'</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Create a vector instance with the given x and y values.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>args</code></td>
+<td><code>Any</code></td>
+<td>
+<p>The vector values.</p>
+</td>
+<td><code>()</code></td>
+</tr>
+<tr>
+<td><code>dtype</code></td>
+<td><code>Any</code></td>
+<td>
+<p>The dtype of the underlying array. Defaults to float64.</p>
+</td>
+<td><code>'d'</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TypeError</code></td>
+<td>
+<p>If x or y are not a number.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="n">float64</span><span class="p">):</span>
+    <span class="sd">"""Create a vector instance with the given x and y values.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        args (Any): The vector values.</span>
+<span class="sd">        dtype (Any, optional): The dtype of the underlying array. Defaults to float64.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TypeError: If x or y are not a number.</span>
+<span class="sd">    """</span>
+    <span class="c1"># Values are passed in as a list</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="c1"># Values are passed in as optinal arguments</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">val</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>  <span class="c1"># pylint: disable=unnecessary-comprehension</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">'You must pass in an list of numbers, or numbers as a args tuple!'</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__le__">
+
+        <code class="highlight language-python">
+__le__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return a &lt;= b.  Computed by @total_ordering from (a &lt; b) or (a == b).</p>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">_le_from_lt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="bp">NotImplemented</span><span class="o">=</span><span class="bp">NotImplemented</span><span class="p">):</span>
+    <span class="s1">'Return a &lt;= b.  Computed by @total_ordering from (a &lt; b) or (a == b).'</span>
+    <span class="n">op_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__lt__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">op_result</span> <span class="ow">or</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__len__">
+
+        <code class="highlight language-python">
+__len__<span class="p">(</span><span class="bp">self</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the length of the vector.</p>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td>
+<p>int: The vector length.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">"""Return the length of the vector.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        int: The vector length.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__lt__">
+
+        <code class="highlight language-python">
+__lt__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_vector</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Check if the self instance is less than the other vector instance.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>other_vector</code></td>
+<td><code>VectorND</code></td>
+<td>
+<p>Other vector instance (right-hand-side of the operator).</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool</code></td>
+<td>
+<p>bool: True, if the self instance is less than the other vector instance.
+False, else.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_vector</span><span class="p">:</span> <span class="n">VectorND</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">"""Check if the self instance is less than the other vector instance.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        other_vector (VectorND): Other vector instance (right-hand-side of the operator).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: True, if the self instance is less than the other vector instance.</span>
+<span class="sd">        False, else.</span>
+<span class="sd">    """</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">check_vector_types</span><span class="p">(</span><span class="n">other_vector</span><span class="p">)</span>
+    <span class="n">is_less_than</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">other_vector</span><span class="p">):</span>
+        <span class="n">is_less_than</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">is_less_than</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__mul__">
+
+        <code class="highlight language-python">
+__mul__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the multiplication of the self vector and the other vector(or number) instance.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>other</code></td>
+<td><code>Union[VectorND, Number]</code></td>
+<td>
+<p>Other vector instance or scaler value (right-hand-side of the operator)</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TypeError</code></td>
+<td>
+<p>[description]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Union[VectorND, Number]</code></td>
+<td>
+<p>Union[VectorND, Number]: The multiplication of the self vector and the other vector(or number) instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">VectorND</span><span class="p">,</span> <span class="n">Number</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">VectorND</span><span class="p">,</span> <span class="n">Number</span><span class="p">]:</span>
+    <span class="sd">"""Return the multiplication of the self vector and the other vector(or number) instance.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        other (Union[VectorND, Number]): Other vector instance or scaler value (right-hand-side of the operator)</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TypeError: [description]</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Union[VectorND, Number]: The multiplication of the self vector and the other vector(or number) instance.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">VectorND</span><span class="p">):</span>
+        <span class="n">vector_dot</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">self_val</span> <span class="o">*</span> <span class="n">other_val</span> <span class="k">for</span> <span class="n">self_val</span><span class="p">,</span> <span class="n">other_val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">values</span><span class="p">)])</span>
+        <span class="k">return</span> <span class="n">vector_dot</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">numbers</span><span class="o">.</span><span class="n">Real</span><span class="p">):</span>
+        <span class="n">vector_mul</span> <span class="o">=</span> <span class="p">[</span><span class="n">val</span> <span class="o">*</span> <span class="n">other</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">VectorND</span><span class="p">(</span><span class="n">vector_mul</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">'You must pass in a vector instance or an int/float number!'</span><span class="p">,)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__repr__">
+
+        <code class="highlight language-python">
+__repr__<span class="p">(</span><span class="bp">self</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the vector instance representation.</p>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td>
+<p>str: The representation of the vector instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">"""Return the vector instance representation.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The representation of the vector instance.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">'vector.VectorND(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="si">}</span><span class="s1">)'</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__setitem__">
+
+        <code class="highlight language-python">
+__setitem__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Returns the vector item at index idx.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>idx</code></td>
+<td><code>int</code></td>
+<td>
+<p>The index idx.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>val</code></td>
+<td><code>Number</code></td>
+<td>
+<p>The new value at index idx.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IndexError</code></td>
+<td>
+<p>If idx &gt;= len.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="n">Number</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">"""Returns the vector item at index idx.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        idx (int): The index idx.</span>
+<span class="sd">        val (Number): The new value at index idx.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        IndexError: If idx &gt;= len.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s1">'Invalid index value!'</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__str__">
+
+        <code class="highlight language-python">
+__str__<span class="p">(</span><span class="bp">self</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>The vector instance as a string.</p>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td>
+<p>str: The vector instance as a string.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">"""The vector instance as a string.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The vector instance as a string.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">'(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="si">}</span><span class="s1">)'</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__sub__">
+
+        <code class="highlight language-python">
+__sub__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_vector</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the subtraction vector of the self and the other vector instance.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>other_vector</code></td>
+<td><code>VectorND</code></td>
+<td>
+<p>Other vector instance (right-hand-side of the operator).</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>VectorND</code></td>
+<td>
+<p>VectorND: The subtraction vector of the self and the other vector instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_vector</span><span class="p">:</span> <span class="n">VectorND</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VectorND</span><span class="p">:</span>
+    <span class="sd">"""Return the subtraction vector of the self and the other vector instance.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        other_vector (VectorND): Other vector instance (right-hand-side of the operator).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        VectorND: The subtraction vector of the self and the other vector instance.</span>
+<span class="sd">    """</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">check_vector_types</span><span class="p">(</span><span class="n">other_vector</span><span class="p">)</span>
+    <span class="n">sub_result</span> <span class="o">=</span> <span class="p">[</span><span class="n">self_val</span> <span class="o">-</span> <span class="n">other_val</span> <span class="k">for</span> <span class="n">self_val</span><span class="p">,</span> <span class="n">other_val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">other_vector</span><span class="o">.</span><span class="n">values</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">VectorND</span><span class="p">(</span><span class="n">sub_result</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.__truediv__">
+
+        <code class="highlight language-python">
+__truediv__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Return the multiplication of the self vector and the other vector(or number) instance.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>other</code></td>
+<td><code>Number</code></td>
+<td>
+<p>Other vector instance or scaler value (right-hand-side of the operator).</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ValueError</code></td>
+<td>
+<p>[description]</p>
+</td>
+</tr>
+<tr>
+<td><code>TypeError</code></td>
+<td>
+<p>[description]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>VectorND</code></td>
+<td>
+<p>VectorND: The multiplication of the self vector and the other vector(or number) instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__truediv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Number</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VectorND</span><span class="p">:</span>
+    <span class="sd">"""Return the multiplication of the self vector and the other vector(or number) instance.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        other (Number): Other vector instance or scaler value (right-hand-side of the operator).</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: [description]</span>
+<span class="sd">        TypeError: [description]</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        VectorND: The multiplication of the self vector and the other vector(or number) instance.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">numbers</span><span class="o">.</span><span class="n">Real</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">other</span> <span class="o">!=</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="n">vector_div</span> <span class="o">=</span> <span class="p">[</span><span class="n">val</span> <span class="o">/</span> <span class="n">other</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">VectorND</span><span class="p">(</span><span class="n">vector_div</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'You cannot divide by zero!'</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">'You must pass in an int/float value!'</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.check_numeric_argument">
+
+        <code class="highlight language-python">
+check_numeric_argument<span class="p">(</span><span class="n">argument</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Check if the argument is a numeric value.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>argument</code></td>
+<td><code>Number</code></td>
+<td>
+<p>Argument to check.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TypeError</code></td>
+<td>
+<p>If the argument is not of type numbers.Real.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">check_numeric_argument</span><span class="p">(</span><span class="n">argument</span><span class="p">:</span> <span class="n">Number</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">"""Check if the argument is a numeric value.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        argument (Number): Argument to check.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TypeError: If the argument is not of type numbers.Real.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">argument</span><span class="p">,</span> <span class="n">numbers</span><span class="o">.</span><span class="n">Real</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">'You must pass in an int/float value!'</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h3 class="doc doc-heading" id="fastvector.vector.VectorND.check_vector_types">
+
+        <code class="highlight language-python">
+check_vector_types<span class="p">(</span><span class="n">vector</span><span class="p">)</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+      </h3>
+<div class="doc doc-contents ">
+<p>Check if the vector is an instance of the VectorND class.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vector</code></td>
+<td><code>VectorND</code></td>
+<td>
+<p>A vector instance.</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TypeError</code></td>
+<td>
+<p>If vector is not an instance of the VectorND class.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>fastvector\vector.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">check_vector_types</span><span class="p">(</span><span class="n">vector</span><span class="p">:</span> <span class="n">VectorND</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">"""Check if the vector is an instance of the VectorND class.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        vector (VectorND): A vector instance.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TypeError: If vector is not an instance of the VectorND class.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">VectorND</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">'You have to pass in two instances of the vector class!'</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="version">Version</h2>
+<div class="doc doc-object doc-module">
+<h2 class="hidden-toc" href="#fastvector.version" id="fastvector.version" style="visibility: hidden; position: absolute;">
+        </h2>
+<div class="doc doc-contents first">
+
+    </div>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Start
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
